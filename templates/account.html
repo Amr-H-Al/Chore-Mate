@@ -1,0 +1,38 @@
+<!-- Project created by Amr Almehdar in 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chore Mate- User Information</title>
+    <link rel="stylesheet" href="{{url_for('static', filename="css/account.css")}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nameHeader">
+        <h1><a class="blackheader" href="{{url_for('home')}}">Chore Mate</a></h1>
+        <div class="header-container">
+            <h5><a class="blackheader" href="{{url_for('todo.dashboard')}}">Home Page</a></h5>
+            <h5><a class="blackheader" href="{{url_for('todo.account_info')}}">Account</a></h5>
+        </div>
+    </div>
+    <hr>
+    <div class="user-info">
+        <h2>Acount Information</h2>
+        <ul>
+            <li>User ID: {{user.id}}</li>
+            <p></p>
+            <li>First Name: {{user.first_name}}</li>
+            <p></p>
+            <li>Last Name: {{user.last_name}}</li>
+            <p></p>
+            <li>Username: {{user.username}}</li>
+        </ul>
+    </div>
+    <a class="logout" href="{{url_for('auth.logout')}}">Log out</a>
+</body>
+<script src="{{ url_for('static', filename='js/account.js') }}"></script>
+
+</html>

@@ -1,0 +1,60 @@
+<!-- Project created by Amr Almehdar in 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Chore Mate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nameHeader">
+        <h1><a class="blackheader" href="{{ url_for('home') }}">Chore Mate</a></h1>
+        <div class="header-container">
+            <h5><a class="blackheader" href="{{ url_for('todo.dashboard') }}">Home Page</a></h5>
+            <h5><a class="blackheader" href="{{ url_for('todo.account_info') }}">Account</a></h5>
+        </div>
+    </div>
+    <hr>
+    <h1 class="welcome">Welcome, {{ username }}!</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="message" id="flashMessages" data-message="{{ messages[0][1] }}" data-category="{{ messages[0][0] }}"></div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="button">
+        <!-- Button to open the popup -->
+        <button id="add-list-button" class="buttonFunction">Add New List</button>
+    </div>
+
+    <h2 class="welcome">Existing Lists:</h2>
+    <div id="lists-container">
+        {% for list in todo_lists %}
+            <div class="todo-list">
+                <a href="{{ url_for('todo.list', id=list.todo_id) }}" id="itemtitle" class="todo-item">{{ list.title }}</a>
+                <form id="itemdelete" action="{{ url_for('todo.delete', id=list.todo_id) }}" method="POST">
+                    <button type="submit"  onclick="return confirm('Are you sure you want to delete this list?')">Delete</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <!-- Popup Div -->
+    <div id="popup" class="popup" style="display: none;">
+        <span class="close">&times;</span>
+        <label for="list-title">Enter List Title:</label>
+        <form action="{{ url_for('todo.create') }}" id="popup-form" method="POST">
+            <input type="text" name="title" id="title" placeholder="Enter Title" required />
+            <button id="title-submit" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+</html>

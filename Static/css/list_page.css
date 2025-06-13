@@ -1,0 +1,295 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: tan;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+
+.header, .nameHeader {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.blackheader{
+    color:black;
+    text-decoration: none;
+    padding:20px
+  }
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+}
+
+.todo-input {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.todo-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid black;
+    outline: none;
+}
+
+.todo-input button, .btnfilter {
+    padding: 15px;
+    background-color: lightcyan;
+    color: black;
+    border: blue;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.headerbtn{
+    display: flex;
+    justify-content: space-between;
+}
+.dropbtn, .filterbtn {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+.dropdown, .filter {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.todo-input button:hover {
+    background-color: #0056b3;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li {
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    color:black;
+}
+
+.todo-list li .task {
+    flex: 1;
+}
+
+.todo-list li .actions button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.todo-list li .actions .complete {
+    background-color: #28a745;
+    color: white;
+}
+
+.todo-list li .actions .delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.todo-list li .actions .complete:hover {
+    background-color: #218838;
+}
+
+.todo-list li .actions .delete:hover {
+    background-color: #c82333;
+}
+
+
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 20px;
+    width: 20%;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+    cursor: pointer;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.headerbtn {
+    margin: 0;
+    padding: 20px;
+    cursor: pointer;
+}
+.dropdown-content, .filter-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 100%;
+}
+
+.dropdown-content a, .filter-content a {
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+    cursor: pointer;
+}
+
+.dropdown-content a:hover, .filter-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content, .filter:hover .filter-content {
+    display: block;
+}
+
+
+
+
+
+.low-priority {
+    background-color: #d4edda; /* Light green */
+    color: #155724;          /* Dark green text */
+}
+
+.medium-priority {
+    background-color: #fff3cd; /* Light yellow */
+    color: #856404;          /* Dark yellow text */
+}
+
+.high-priority {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24;          /* Dark red text */
+}
+
+/* Optional: Style the urgency text specifically */
+.task-item .urgency {
+    font-weight: bold;
+    display: inline;
+}
+
+.task-title {
+    display: block; /* Forces the task title to appear on its own line */
+    font-weight: bold;
+}
+
+.task-details {
+    display: flex;
+    gap: 10px; /* Adds spacing between urgency and due date */
+}
+
+
+/* Task Container Styling */
+.task-container {
+    list-style: none; /* Removes default list styling */
+    margin: 15px 0; /* Adds spacing between tasks */
+    padding: 10px; /* Adds internal spacing */
+    border: 1px solid #ddd; /* Adds a border */
+    border-radius: 5px; /* Rounds the corners */
+    background-color: #f9f9f9; /* Light background for better readability */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for a card effect */
+    display: flex; /* Makes the container a flex container */
+    flex-direction: column; /* Stack the title and other elements initially */
+    gap: 10px; /* Adds space between title and details */
+}
+
+/* Title Styling */
+.task-title {
+    font-size: 18px; /* Larger font size for emphasis */
+    font-weight: bold; /* Makes the title bold */
+}
+
+/* Details and Actions Combined */
+.task-details {
+    display: flex; /* Aligns items in a row */
+    justify-content: space-between; /* Spreads buttons to the left and details to the right */
+    align-items: center; /* Vertically aligns items */
+    font-size: 14px; /* Smaller font for details */
+    gap: 10px; /* Adds space between child elements */
+}
+
+/* Priority Colors */
+.low-priority {
+    color: green;
+    font-weight: bold;
+}
+
+.medium-priority {
+    color: orange;
+    font-weight: bold;
+}
+
+.high-priority {
+    color: red;
+    font-weight: bold;
+}
+
+/* Actions Styling */
+.actions {
+    display: flex; /* Keeps buttons in a row */
+    gap: 10px; /* Adds space between buttons */
+}
+
+.complete {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete {
+    background-color: #f44336; /* Red button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.complete:hover,
+.delete:hover {
+    opacity: 0.9; /* Slight hover effect */
+}

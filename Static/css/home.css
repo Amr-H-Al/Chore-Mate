@@ -1,0 +1,168 @@
+.nameHeader {
+    margin: 0px;
+    font-size: 23px;
+    color: black;
+    font-family: "Lugrasimo", cursive;
+    font-style: normal;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:tan;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Center content horizontally */
+}
+.ubuntu-light {
+    font-family: "Ubuntu", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .ubuntu-regular {
+    font-family: "Ubuntu", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .ubuntu-medium {
+    font-family: "Ubuntu", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .ubuntu-bold {
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .ubuntu-light-italic {
+    font-family: "Ubuntu", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .ubuntu-regular-italic {
+    font-family: "Ubuntu", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .ubuntu-medium-italic {
+    font-family: "Ubuntu", serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .ubuntu-bold-italic {
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  .button{
+    display: flex;
+    padding-top: 20px;
+    padding-left:20px;
+}
+
+.buttonFunction {
+    font-size: 20px;
+    border-radius: 30px;
+    background-color: lightcyan;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+
+}
+.popup input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
+
+.popup button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+#popup {
+    display: none; /* Initially hide the popup */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 200px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+ 
+  .welcome{
+    padding-left:20px;
+  }
+  .header, .nameHeader {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.headerbtn {
+    margin: 0;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.blackheader{
+  color:black;
+  text-decoration: none;
+  padding:20px
+}
+
+.todo-list{
+  padding:20px;
+  margin-left:10px;
+  width:60%;
+  border: 5px solid black;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:10px;
+}
+.todo-item{
+  font-size: xx-large;
+  color:black;
+  text-decoration: underline;
+  width:60%;
+}
+
+#itemdelete{
+  border-radius: 40%;
+  
+ 
+}

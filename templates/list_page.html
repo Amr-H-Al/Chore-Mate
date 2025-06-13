@@ -1,0 +1,84 @@
+<!-- Project created by Amr Almehdar in 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chore Mate</title>
+    <link rel="stylesheet" href="{{url_for('static', filename="css/list_page.css")}}">
+    
+</head>
+<body>
+    <div class="nameHeader">
+        <h1><a class="blackheader" href="{{ url_for('home') }}">Chore Mate</a></h1>
+        <div class="header-container">
+            <h5><a class="blackheader" href="{{ url_for('todo.dashboard') }}">Home Page</a></h5>
+            <h5><a class="blackheader" href="{{ url_for('todo.account_info') }}">Account</a></h5>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="header">
+            <h2>Title: {{todo.title}}</h2>
+            <h4>Write your task with a priority level and a due date!</h4>
+            <form action="{{url_for('todo.filter', id=todo.todo_id)}}" method='POST'>
+                <div class="header-container">
+                    <div class="filter">
+                     <button type="button" id="filterbtn" class="filterbtn">Filter By ▼</button>
+                        <div class="filter-content">
+                            <a href="#" onclick="filterTasks(event,'Time')">Time Added</a>
+                            <a href="#" onclick="filterTasks(event,'Due')">Due Date</a>
+                            <a href="#" onclick="filterTasks(event,'Priority')">Priority Level</a>
+                        </div>
+                    </div>
+                    <input type="hidden" name="filter" id="filter-value">
+                    <button class="btnfilter" type="submit" >Submit-Filter</button>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="todo-input">
+            <form action="{{url_for('todo.add', id=todo.todo_id)}}" method='POST'>
+                <input class="task" name="task" type="text" id="todo-input" placeholder="Add a new task..." required>
+                <div class="dropdown">
+                    <button type="button" class="dropbtn" id="urgency-btn">Select Urgency ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="selectUrgency(event, 'Low Priority')">Low Priority</a>
+                        <a href="#" onclick="selectUrgency(event, 'Medium Priority')">Medium Priority</a>
+                        <a href="#" onclick="selectUrgency(event, 'High Priority')">High Priority</a>
+
+                    </div>
+                </div>
+                <input type="hidden" name="urgency" id="urgency-value">
+                <input type="date" name="date" id="due-date" placeholder="Due Date">
+                <button type="submit" >Add</button>
+            </form>
+        </div>
+
+        <ul class="todo-list" id="todo-list">
+            {% for task in lists %}
+            <li class="task-container">
+                <span class="task-title">{{ task.task }}</span>
+                <div class="task-details">
+                    <span class="task-item {{ 'low-priority' if task.urgency == 'Low Priority' else 'medium-priority' if task.urgency == 'Medium Priority' else 'high-priority' }}">
+                        {{ task.urgency }}
+                    </span>
+                    <span class="task-due-date">Due: {{ task.due_date }}</span>
+                </div>
+                <div class="actions">
+                                      
+                    <form action="{{ url_for('todo.delete_item', id=task.item_id) }}" method="POST">
+                        <button type="submit" class="delete">Delete</button>
+                    </form>
+                </div>
+            </li>
+            {% endfor %}            
+    </ul>
+    </div>
+   
+
+    <script src="{{ url_for('static', filename='js/list.js') }}"></script>
+    </script>
+</body>
+</html>

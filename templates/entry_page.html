@@ -1,0 +1,39 @@
+<!-- Project created by Amr Almehdar in 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chore Mate</title>
+  <link rel="stylesheet" href="{{url_for('static', filename="css/entry_page.css")}}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nameHeader">
+        <h1>Welcome to Chore Mate
+        </h1>
+      </div>
+      
+  <hr>
+  <div class="containInfo">
+    <div id="infos" class="info">
+        <div>
+          <p><b>Welcome to Chore Mate!</b></p>
+          <p>
+            Welcome aboard our platform designed to help you split your task with friends, family, and roomates!:</p>
+          <ul>
+            <li><b>Assign Tasks:</b> Write down your tasks along with a time frame and a level or urgency.</li>
+          </ul>
+          <div class="buttonDiv">
+            <form action="/auth/login" method="GET">
+              <button type="submit" >START</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/JS/index.js"></script>
+</body>
+</html>

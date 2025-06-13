@@ -1,0 +1,52 @@
+<!-- Project created by Amr Almehdar in 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create Account - Chore Mate</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/create.css')}}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+      </head>
+<body>
+    <div class="nameHeader">
+        <h1><a class="blackheader" href="{{url_for('home')}}">Chore Mate</a></h1>
+      </div>
+    <hr>
+    <div class="around">
+    <div class="create">
+            <h2>Create Account</h2>
+            <hr>
+            <div class = "infoBox">
+            <form action="{{url_for('auth.signup')}}" method="POST">
+                    <h4 id="instruct"> 
+                        Enter your legal first and last name to create your account.
+                    </p>
+                    <input type="text" class="info" name="first_name" placeholder="FIRST NAME" required> 
+                    <input type="text" class="info" name="last_name" placeholder="LAST NAME" required> 
+                    
+                    <p id="instruct">
+                        Now use your email and a unique password.
+                    </p>
+                   <input type="text" class="info" name="username" id="username" placeholder="USERNAME" required> 
+                   <input type="password" class="info" name="password" id="password" placeholder="PASSWORD" required>
+                   <input type="checkbox" onclick="document.getElementById('password').type = this.checked ? 'text' : 'password';">Show Password
+                   <hr>
+                   <a class="link" href="{{url_for('auth.login')}}">Already have an account?</a>
+                   <div class = "button"><p><button class = "buttonFunction" type ="submit">Create Account</button></p></div>
+                   {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                         <div class="message" id="flashMessages" data-message="{{ messages[0][1] }}" data-category="{{ messages[0][0] }}"></div>
+                        {% endif %}
+                    {% endwith %}
+            </form>
+            
+        </div>
+    </div>
+    </div>
+
+</body>
+<script src="{{url_for('static', filename='js/login.js')}}"></script>
+</html>

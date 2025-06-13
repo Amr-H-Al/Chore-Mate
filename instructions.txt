@@ -1,0 +1,43 @@
+# Project created by Amr Almehdar in 2025
+
+Instructions for Setting Up the Virtual Environment and Dependencies
+
+1. Create a Virtual Environment:
+   - Open your terminal/command prompt
+   - Navigate to the project directory
+   - Run the following command to create a virtual environment:
+     ```
+     python -m venv env
+     ```
+
+2. Activate the Virtual Environment:
+   - On Windows:
+     ```
+     env\Scripts\activate
+     ```
+   - On macOS/Linux:
+     ```
+     source env/bin/activate
+     ```
+
+3. Install Required Dependencies:
+   - Make sure you're in the project directory and the virtual environment is activated
+   - Run the following command to install all required packages:
+     ```
+     pip install -r requirements.txt
+     ```
+
+4. Verify Installation:
+   - After installation is complete, you can verify the installed packages by running:
+     ```
+     pip list
+     ```
+
+5. Running the Application:
+   - With the virtual environment activated, run:
+     ```
+     python run.py
+     ```
+
+Note: Make sure you have Python installed on your system before following these steps.
+The virtual environment (env folder) should not be included in version control as it contains system-specific files. 
